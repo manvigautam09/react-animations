@@ -5,14 +5,14 @@ import { withRouter } from "react-router-dom";
 import { zoomIn } from "react-animations";
 
 const ContainerDiv = styled.div`
-  width: 80%;
+  padding: 9%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
 const Photodiv = styled.div`
-  animation: 5s ${keyframes`${zoomIn}`};
+  animation: 2s ${keyframes`${zoomIn}`};
   background-image: url(${props => props.photoUrl});
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,12 +20,27 @@ const Photodiv = styled.div`
   width: 200px;
   height: 250px;
   &:hover {
-    width: 300px;
-    height: 350px;
     overflow: hidden;
     transition: transform 0.5s ease;
-    transform: scale(1.5);
+    transform: scale(2);
   }
+`;
+
+const OuterDiv = styled.div`
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 `;
 
 const ProductDetail = props => {
@@ -38,10 +53,9 @@ const ProductDetail = props => {
       }
     });
   });
-  if (categoryDetails[category] === []) {
-    return <div>No data here</div>;
-  } else
-    return (
+
+  return (
+    <OuterDiv>
       <ContainerDiv>
         {categoryDetails[category] &&
           categoryDetails[category].map(item => {
@@ -50,6 +64,7 @@ const ProductDetail = props => {
             );
           })}
       </ContainerDiv>
-    );
+    </OuterDiv>
+  );
 };
 export default withRouter(ProductDetail);
