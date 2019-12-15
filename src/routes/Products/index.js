@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { categories } from "../../fakedata/products";
 import styled, { keyframes } from "styled-components";
 import { flipInX, hinge } from "react-animations";
@@ -59,11 +59,7 @@ async function changeAnimation(id, history) {
 
 const Products = props => {
   const [animation, updateAnimation] = useState("flip");
-  //   const [products, upadteProducts] = useState(categories);
-  //   useEffect(() => {
-  //     if (props.match.params.id) {
-  //     }
-  //   });
+
   return (
     <Containerdiv>
       {categories.map(item => {
