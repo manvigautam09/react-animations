@@ -67,6 +67,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-## ANIMATION GIF
+## Animation Gif
 
 ![Web Demo](https://github.com/ManviSharma09/react-animations/blob/readMeUpdate/src/assets/videos/ezgif.com-video-to-gif.gif)
